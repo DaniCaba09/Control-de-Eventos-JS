@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios Tema 9</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body onmousemove="MostrarCoord(event)" onmousedown="BotonRaton(event)"
+    style="background-color:rgb(141, 100, 50);border: 1px solid white; color: aliceblue;">
+
+    <!-- EJERCICIO 1 -->
+
+    <h1>Ejercicio 1</h1>
+    <h3>Coordenadas y Click</h3>
+
+    <div>
+        <h5 id="coordenadas">Coordenadas:</h5>
+
+
+        <script>
+            function MostrarCoord(event) {
+                var x = event.clientX;
+                var y = event.clientY;
+                var coord = " Coordenadas de X: " + x + ", Coordenadas de Y: " + y;
+                document.getElementById("coordenadas").innerHTML = coord;
+            }
+        </script>
+
+
+    </div>
+    <!--Este es el div que cierra el ejercicio 1 de las coordenadas, cerrar al final para que se muestren las coordenadas de toda la pantalla-->
+
+    <div style="background-color:rgb(141, 100, 50);border: 1px solid white; color: aliceblue;">
+        <div onmousedown="BotonRaton(event)">
+            <p>El boton del ratón que has clicado ha sido el:</p>
+        </div>
+        <p id="clickraton"></p>
+    </div>
+
+
+    <script>
+        function BotonRaton(event) {
+            var texto = opcion;
+            var opcion = event.button;
+
+            switch (opcion) {
+                case 0:
+                    document.getElementById("clickraton").innerHTML += ("Izquierdo");
+                    break;
+                case 1:
+                    document.getElementById("clickraton").innerHTML += ("Central");
+                    break;
+
+                case 2:
+                    document.getElementById("clickraton").innerHTML += ("Derecho");
+                    break;
+            }
+        }
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
